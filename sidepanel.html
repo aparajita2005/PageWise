@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body class="side-panel">
+  <header>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <div>
+        <h1>PageWise</h1>
+        <span class="brand-caption">WEB &amp; DOCUMENT ASSISTANT</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="historyBtn" class="open-chat-btn" type="button" aria-expanded="false">History</button>
+      <button id="newChatBtn" class="open-chat-btn" type="button" title="Start a new conversation">＋ <span>New</span></button>
+      <button id="clearChatBtn" class="icon-btn" type="button" title="Clear this conversation" aria-label="Clear this conversation">⌫</button>
+      <button id="openChatBtn" class="open-chat-btn" type="button" title="Open a larger chat view">↗ <span>Open chat</span></button>
+      <button id="chatSizeBtn" class="open-chat-btn hidden" type="button" title="Return to page">↙ <span>Back to page</span></button>
+      <button id="optionsBtn" class="icon-btn" type="button" aria-label="Settings" title="Settings">⚙</button>
+    </div>
+  </header>
+
+  <div class="status-card">
+    <span class="status-dot" aria-hidden="true"></span>
+    <div id="status" class="status">Checking page…</div>
+    <button id="refreshPageBtn" class="icon-btn refresh-btn" type="button" aria-label="Refresh page text" title="Refresh page text">↻</button>
+  </div>
+  <div id="unsupportedNote" class="notice hidden"></div>
+
+  <section id="historyPanel" class="history-panel hidden" aria-label="Previous chats">
+    <div class="history-heading"><strong id="historyHeading">Chats for this document</strong><button id="historyScopeBtn" class="history-scope-btn" type="button">All history</button><button id="closeHistoryBtn" class="icon-btn" type="button" aria-label="Close chat history">×</button></div>
+    <div id="historyList" class="history-list"></div>
+  </section>
+
+  <button id="summarizeBtn" class="summary-btn" type="button" disabled>
+    <span aria-hidden="true">✦</span> Summarize this page
+  </button>
+
+  <section id="conversation" class="conversation" aria-live="polite"></section>
+
+  <form id="askForm" class="composer">
+    <div class="composer-box">
+      <textarea id="questionInput" rows="1" aria-label="Your question" placeholder="Ask a question about this page…"></textarea>
+      <button id="askBtn" type="submit" aria-label="Send question" title="Send question" disabled>↑</button>
+    </div>
+    <div class="composer-hint">Enter to send <span>·</span> Shift + Enter for a new line</div>
+  </form>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: -apple-system, "Segoe UI", sans-serif; max-width: 480px; margin: 40px auto; color: #1b1f24; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; }
+    input, select { width: 100%; padding: 8px; margin-bottom: 14px; box-sizing: border-box; }
+    button { padding: 8px 16px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    p.hint { font-size: 12.5px; color: #666; margin-top: -8px; }
+    #savedMsg { color: #16a34a; font-size: 13px; margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <h2>PageWise Settings</h2>
+
+  <label for="apiKey">Gemini API key (free tier)</label>
+  <input id="apiKey" type="password" placeholder="Paste your key from aistudio.google.com" />
+  <p class="hint">Get a free key at Google AI Studio → "Get API key". No credit card required for the free tier.</p>
+
+  <label for="model">Model</label>
+  <input id="model" type="text" placeholder="gemini-3.5-flash-lite" />
+  <p class="hint">The default is Gemini 3.5 Flash-Lite for faster replies. If your selected model is busy or unavailable, PageWise tries one fallback model.</p>
+  <p class="hint">After loading the unpacked extension, click Reload on chrome://extensions. For local PDF files, enable “Allow access to file URLs” on the extension’s card.</p>
+
+  <button id="saveBtn">Save</button>
+  <span id="savedMsg" style="display:none;">Saved ✓</span>
+
+  <script src="options.js"></script>
+</body>
+</html>
